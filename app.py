@@ -31,14 +31,13 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("result").get("action") == "search":
-        res = makeWebhookResult1(req)
-        return res
+    if req.get("result").get("action") != "search":
+        return {}
  #   elif req.get("result").get("action") = "RequestAdmin":
   #      makeWebhookResult2(req)
    #     return {}
-    else:
-        return {}
+    res = makeWebhookResult1(req)
+        return res
 
 def makeWebhookResult1(req):
     components = req.get("result").get("parameters").get("components")
