@@ -63,6 +63,12 @@ def makeWebhookResult(req):
             # "contextOut": [],
             "source": "tqb-sparkbot"
         }
+    else:
+        ACCESS_TOKEN = 'M2U2MmQ1N2ItMTgxNi00NjM3LWIyZmEtNmI3NjI5ZjQzMTNjYWM5Nzk4YTItMDE4'
+        headers = {'Authorization': 'Bearer ' + ACCESS_TOKEN}
+        data = {'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vMDQ4NDMwNDUtMmYyMC0zYmZlLTlkY2QtMWZlYTg4MzQzYzVm', 'text': 'Hello StackOverflow'}
+        resp = requests.post(url='https://api.ciscospark.com/v1/messages', data=data, headers=headers)
+        return {}
 
 #def makeWebhookResult2(req):
  #   ACCESS_TOKEN = 'M2U2MmQ1N2ItMTgxNi00NjM3LWIyZmEtNmI3NjI5ZjQzMTNjYWM5Nzk4YTItMDE4'
