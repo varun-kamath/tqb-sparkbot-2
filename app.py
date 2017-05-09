@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import urllib
-import requests
+#import requests
 import json
 import os
 import math
@@ -36,10 +36,10 @@ def processRequest(req):
  #   elif req.get("result").get("action") = "RequestAdmin":
   #      makeWebhookResult2(req)
    #     return {}
-    res = makeWebhookResult1(req)
-        return res
+    res = makeWebhookResult(req)
+    return res
 
-def makeWebhookResult1(req):
+def makeWebhookResult(req):
     components = req.get("result").get("parameters").get("components")
     number =  req.get("result").get("parameters").get("number")
     
@@ -76,6 +76,6 @@ def makeWebhookResult1(req):
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
 
-    print "Starting app on port %d" % port
+ #   print "Starting app on port %d" % port
 
     app.run(debug=False, port=port, host='0.0.0.0')
